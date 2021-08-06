@@ -67,6 +67,7 @@
 
   h5 {
       margin-right: var(--mrg);
+      padding-left: 10px;
   }
 
   main > div {
@@ -155,6 +156,20 @@
   .medialinks > a:hover {
       border: var(--buttonborder);
       border-radius: 100%;
+  }
+
+  .headerresume > a:hover,
+  .headerresume > a:focus {
+      background: white;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      color: black;
+  }
+
+  .headerresume > a:active {
+      background: rgba(0, 0, 0, 0.774);
+      border: var(--buttonborder);
+      text-decoration: none;
   }
 
   .formbutton > button {
@@ -324,10 +339,24 @@
       font-weight: bold;
   }
 
+  .footerthanks {
+      display: flex;
+      align-items: center;
+      background: var(--silverop);
+      height: 50px;
+      width: 225px;
+      border-radius: 20px 0 0 20px;
+  }
+
   .backtotop {
-      border: var(--border);
+      height: 40px;
+      width: 75px;
+      margin-left: 10px;
+  }
+
+  .backtotop > a > img {
       height: 100%;
-      width: 100px;
+      width: auto;
   }
 
   .medialinks {
@@ -343,7 +372,49 @@
     width: 50px;
   }
 
-  @media all and (max-width: 992) {
+  .resumepage {
+      height: 100vh;
+      background-color: var(--silver);
+  }
+
+  .headerresume {
+      margin: 15% 20%;
+      text-align: center;
+      color: var(--text);
+      font: var(--font);
+      font-weight: var(--bold);
+      border: 5px solid white;
+      padding: 75px;
+  }
+
+  .headerresume > a {
+      color: var(--text);
+      font: var(--font);
+      font-weight: var(--bold);
+      font-size: 18px;
+      text-decoration: underline;
+      padding: 5px 7px;
+  }
+
+  .resumeh1 {
+      color: var(--text);
+      font: var(--font);
+      font-weight: var(--bold);
+      text-align: center;
+      font-size: 50px;
+      margin-bottom: 10px;
+  }
+
+  .resumeh2 {
+      color: var(--text);
+      font: var(--font);
+      font-weight: var(--bold);
+      text-align: center;
+      font-size: 35px;
+      margin-bottom: 50px;
+  }
+
+  @media all and (max-width: 992px) {
 
         .workitem1,
         .workitem2,
