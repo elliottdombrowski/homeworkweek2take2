@@ -177,6 +177,10 @@
     color: var(--text);
   }
 
+  .topbutton {
+      position: hidden;
+  }
+
   .headerone {
       display: flex;
       align-items: center;
