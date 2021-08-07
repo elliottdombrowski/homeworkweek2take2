@@ -10,9 +10,11 @@
       --font: "Goudy Bookletter 1911", sans-serif;
       --bold: bold;
       --border: 1.5px solid black;
+      --border2: 1.5px solid white;
       --buttonborder: 2px solid white;
       --bg1: rgba(19, 19, 19, 0.76);
       --bg2: #3e4657;
+      --bg3: rgba(0, 0, 0, 0.753);
       --silver: #0f0f0f;
       --silverop: #0f0f0fbe;
       --mrg: 30px;
@@ -36,7 +38,7 @@
     justify-content: space-between;
     height: 50px;
     width: 100%;
-    background-color: var(--silverop);
+    background: var(--bg3);
   }
 
   h1,
@@ -53,11 +55,11 @@
   }
 
   h2 {
-      margin-left: 8px;
+      margin: 0 0 10px 8px;
   }
 
   h3 {
-      text-align: right;
+      text-align: center;
       margin-right: 8px;
   }
   
@@ -70,8 +72,9 @@
       padding-left: 10px;
   }
 
+  body,
   main > div {
-      background-color: grey;
+      background-color: var(--silver);
   }
   
   nav,
@@ -110,7 +113,7 @@
     width: 300px;
     height: 40px;
     padding-left: 5px;
-    background: var(--silverop);
+    background: rgba(27, 27, 27, 0.76);
     border: none;
     margin: 3px;
 }
@@ -129,8 +132,14 @@
     justify-content: space-between;
     align-items: center;
     height: 100px;
-    background: var(--bg1);
+    background: var(--bg3);
   } 
+
+  iframe {
+      width: 100%;
+      height: 400px;
+      box-shadow: 20px 10px 8px black;
+  }
   
   button:hover,
   li:hover,
@@ -177,6 +186,27 @@
     color: var(--text);
   }
 
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  .navwrapper {
+      display: flex;
+      flex-flow: row wrap;
+  }
+
   .topbutton {
       position: hidden;
   }
@@ -201,25 +231,21 @@
       display: flex;
       flex-flow: row wrap;
       margin-top: 60px;
-      /* background-color: var(--bg1); */
       height: 100%;
   }
 
   .workwrapper > div,
-  .rightfloating,
   .bioytcontainer,
   .bio,
-  .youtube,
-  .leftfloating,
-  .funfacts {
+  .youtube {
       border: var(--border);
   }
 
   .rightfloating {
-      position: relative;
       flex: 2 65%;
       margin: var(--mrg);
-      height: 900px;
+      border: var(--border2);
+      height: 1000px;
       order: 2;
   }
 
@@ -227,15 +253,30 @@
       position: relative;
       flex: 1 25%;
       margin: var(--mrg);
-      height: 900px;
+      border: var(--border2);
+      height: 1000px;
       order: 1;
   }
 
+  .funfacts > p {
+      font: var(--font);
+      font-weight: var(--bold);
+      color: var(--text);
+      font-size: 130%;
+  }
+
   .youtube {
-      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow-x: hidden;
+      overflow-y: scroll;
       bottom: 0px;
-      height: 100%;
-      width: 100%;
+      max-height: 470px;
+  }
+
+  .vidcontainer {
+      margin: 10%;
   }
 
   .bio {
@@ -246,8 +287,10 @@
   .funfacts {
       position: absolute;
       bottom: 0px;
-      height: 100px;
+      right: 0px;
+      height: 20px;
       width: 100%;
+      text-align: center;
   }
 
   .workheaderright {
@@ -304,10 +347,7 @@
       height: auto;
   }
 
-  .workitem1,
-  .workitem2,
-  .workitem3,
-  .workitem4 {
+  .workitem {
       position: relative;
       height: 100%;
       width: 50%;
@@ -315,24 +355,18 @@
       margin: 50px 0;
   }
 
-  .workitem1 > img,
-  .workitem2 > img,
-  .workitem3 > img,
-  .workitem4 > img {
+  .workitem > img {
       width: 100%;
       height: auto;
-  }
-
-  .gradient {
-      height: 60px;
-      background: linear-gradient(white, var(--silverop));
   }
 
   .formcontainer {
       display: flex;
       justify-content: center;
       align-items: center;
-      background: var(--silverop);
+      background: var(--silver);
+      margin-top: 60px;
+      margin-bottom: var(--mrg);
       height: 150px;
       width: 100%
   }
@@ -354,8 +388,8 @@
 
   .backtotop {
       height: 40px;
-      width: 75px;
-      margin-left: 10px;
+      width: 40px;
+      margin: 0 20px 0 10px;
   }
 
   .backtotop > a > img {
@@ -420,28 +454,127 @@
 
   @media all and (max-width: 992px) {
 
-        .workitem1,
-        .workitem2,
-        .workitem3,
-        .workitem4 {
-            flex-basis: 90%;
-        }
-
-        .main {
+        main {
             flex-direction: column;
         }
-    
-        .leftfloating {
-            width: 100%;
-            height: 300px;
-            order: 1;
+        
+        h4 {
+            text-align: left;
+        }
+
+        .aboutwrapper {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .rightfloating {
-            width: 100%;
-            height: 300px;
+            max-height: 100%;
             order: 2;
         }
 
+        .leftfloating {
+            max-height: 100%;
+            margin: 10px var(--mrg);
+            order: 1;
+            text-align: center;
+        }
+
+        .funfacts {
+            position: relative;
+            margin-top: 10px;
+            height: 20px;
+            text-align: center;
+        }
+
+        .workcontainer {
+            margin: 5px 30px 30px 30px;
+        }
+
+        .workheaderright {
+            margin: 0 var(--mrg);
+            order: 1;
+        }
+
+        .workitemcontainer {
+            display: flex;
+            justify-content: center;
+            margin: 0 10%;
+            order: 2;
+        }
+
+        .workitem {
+            flex-basis: 70%;
+        }
+
+
+  }
+
+  @media all and (max-width: 850px) {
+
+        html {
+            max-width: 100%;
+        }
+
+        header {
+            display: block;
+            max-width: 100%;
+            height: 100%;
+        }
+
+        li {
+            margin: 3px;
+        }
+
+        body,
+        footer,
+        .aboutwrapper,
+        .workwrapper,
+        .formcontainer {
+            background: var(--silver);
+        }
+
+        .workwrapper,
+        .mainwork,
+        .workitemcontainer {
+            display: block;
+            margin: 0;
+        }
+
+        .workitem {
+            width: 100%;
+        }
+
+        .buttondiv,
+        nav {
+            display: inline;
+            align-items: center;
+            margin: 10px 0;
+        }
+    }
+
+  @media all and (max-width: 541px) {
+
+        footer {
+            display: flex;
+            flex-direction: column;
+            flex: wrap;
+            max-width: 100%;
+        }
+
+        .medialinks {
+            justify-content: center;
+            width: 100%;
+            order: 1;
+            margin: 0;
+        }
+
+        .footerthanks {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            order: 2;
+            border-radius: 0;
+        }
 
   }
