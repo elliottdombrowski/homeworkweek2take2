@@ -6,6 +6,7 @@ It should be noted that there are a handful of design/color palette tweaks to wr
 # Features
 - Nav bar buttons transition on hover, jump to respective point on the page.
 - Contact button transitions on hover, jumps to external page with "back to main page" button.
+- Image links transition on hover. 
 - Footer media buttons transition on hover, jump to external pages in new tabs.
 - Back to top button.
 - I added a youtube embed in the "About" section with a custom scroll bar.

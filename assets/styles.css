@@ -141,7 +141,12 @@
       height: 400px;
       box-shadow: 20px 10px 8px black;
   }
-  
+
+  .mainwork > img,
+  .workitem > a > img {
+    max-width: 100%;
+  }
+
   button:hover,
   li:hover,
   input:hover {
@@ -185,6 +190,12 @@
   .formbutton > button {
     background: var(--silverop);
     color: var(--text);
+  }
+
+  .areyouinpain:hover,
+  .workitem > a:hover {
+      border-bottom: var(--border3);
+      transition: all 0.3s ease;
   }
 
   ::-webkit-scrollbar {
@@ -254,6 +265,8 @@
   .leftfloating {
       flex: 1 25%;
       margin: var(--mrg);
+      border: var(--border3);
+      background: var(--gradient);
       order: 1;
   }
 
@@ -272,8 +285,14 @@
   }
 
   .bio {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
       height: 400px;
-      margin: 20px 75px;
+      margin: 20px 10%;
+      color: var(--text);
+      font: var(--font);
+      font-weight: var(--bold);
   }
 
   .workheaderright {
@@ -281,6 +300,8 @@
       order: 2;
       height: 100%;
       margin: var(--mrg);
+      border: var(--border3);
+      background: var(--gradient);
   }
 
   .workcontainer {
@@ -442,7 +463,6 @@
     main {
         flex-direction: column;
     }
-
     
     h4 {
         text-align: center;
@@ -473,6 +493,7 @@
 
     .workheaderright {
         margin: 0 var(--mrg);
+        height: 100%;
         order: 3;
     }
 
@@ -497,7 +518,7 @@
 
         
         h4 {
-            text-align: left;
+            text-align: center;
         }
 
         .aboutwrapper {
