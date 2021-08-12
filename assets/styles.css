@@ -1,9 +1,13 @@
+/*Wildcard selectors for main bodies*/
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     text-decoration: none;
   }
+
+/* Declaring variables*/
 
   :root {
       --text: white;
@@ -21,6 +25,8 @@
       --mrg: 30px;
       --gradient: linear-gradient(to right, var(--bg3), var(--bg2));
   }
+
+/* Begin Element selectors, organized top to bottom of page- */
 
   html {
       height: 100%;
@@ -73,11 +79,6 @@
       padding-left: 10px;
   }
 
-  body,
-  main > div {
-      background-color: var(--silver);
-  }
-  
   nav,
   nav > li {
       display: flex;
@@ -108,6 +109,11 @@
       font: var(--font);
       padding: 4px 10px;
       background: whitesmoke;
+  }
+
+  body,
+  main > div {
+      background-color: var(--silver);
   }
 
   input {
@@ -146,6 +152,8 @@
   .workitem > a > img {
     max-width: 100%;
   }
+
+/* Styling transitions and button animations */
 
   button:hover,
   li:hover,
@@ -198,6 +206,8 @@
       transition: all 0.3s ease;
   }
 
+/* Styling scroll bars*/
+
   ::-webkit-scrollbar {
     width: 7px;
   }
@@ -213,6 +223,8 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+
+/* Begin class selectors */
 
   .navwrapper {
       display: flex;
@@ -458,6 +470,9 @@
       margin-bottom: 50px;
   }
 
+  /* Begin media queries */
+
+  /* Smaller/medium laptop screens */
   @media all and (max-width: 1200px) {
 
     main {
@@ -509,6 +524,8 @@
 
 
 }
+
+/* Smaller laptop screens */
 
   @media all and (max-width: 992px) {
 
@@ -562,6 +579,8 @@
 
   }
 
+  /* Large tablets */
+
   @media all and (max-width: 850px) {
 
         html {
@@ -605,7 +624,13 @@
         }
     }
 
+    /* Small screens, phones */
+
   @media all and (max-width: 541px) {
+
+        body {
+            max-width: 100%;
+        }
 
         footer {
             display: flex;
